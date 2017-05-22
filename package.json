@@ -36,6 +36,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.3.2",
     "webpack-dev-server": "1.14.1",
-    "html-webpack-plugin": "^2.22.0"
+    "html-webpack-plugin": "^2.22.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "vue": "^1.0.25"
   }
 }

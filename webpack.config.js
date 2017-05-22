@@ -1,12 +1,18 @@
 
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 let path = require('path');
 
 
 let APP_PATH = path.resolve(__dirname, 'src');
 let BUILD_PATH = path.resolve(__dirname, 'dist');
 let plugins = [
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        filename: 'vendor.bundle.js'
+    }),
     new HtmlWebpackPlugin({
         title: 'test',
         template: './src/test.tpl',
@@ -34,6 +40,7 @@ module.exports = {
     entry: {
         test: './src/test.js',
         test2: './src/test2.js',
+        vendor: ['Vue']
     },
     output: {
         // publicPath,
@@ -50,18 +57,19 @@ module.exports = {
                 presets: ['es2015']
             }
         }, {
-            // 处理less文件
             test: /\.less/,
             include: APP_PATH,
-            // exclude: APP_PATH + '/css',
             loader: 'style-loader!css-loader!less-loader'
-        }]
+        }
+        // {
+        //     test: /\.less/,
+        //     include: APP_PATH,
+        //     loader: ExtractTextPlugin.extract('style-loader!css-loader!less-loader')
+        // }
+        ]
     },
     plugins: plugins,
     resolve: {
-        extensions: ['.js', '.jsx'],
-        alias: {
-            
-        }
+        extensions: ['.js', '.jsx']
     }
 };

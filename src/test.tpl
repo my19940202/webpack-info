@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>webpack用法整理</title>
+        <script type="text/javascript" src="/vendor.bundle.js"></script>
     </head>
     <body>
         <h1>早睡早起身体好</h1>
@@ -13,8 +14,12 @@
         <div class="item">
             年轻人不要撸管
         </div>
-        <div class="item">
-             想好为什么找妹子
+        <div class="item" id="vue-test">
+             <ul>
+                 <li v-for="n in 5">
+                     想好为什么找妹子的原因{{n}}
+                 </li>
+             </ul>
         </div>
     </body>
 </html>
