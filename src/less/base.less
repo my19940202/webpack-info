@@ -1,0 +1,21 @@
+body {
+    @w: 500px;
+    .item {
+        width: @w;
+        height: @w * 0.618;
+        line-height: @w * 0.618;
+        background: #DDD;
+        text-align: center;
+        &:hover {
+            background: #009911;
+        }
+        &:first-child {
+            background: #111;
+
+        }
+        &:last-child {
+            background: #111;
+
+        }
+    }
+}
