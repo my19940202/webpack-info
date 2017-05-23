@@ -40,7 +40,8 @@ module.exports = {
     entry: {
         test: './src/test.js',
         test2: './src/test2.js',
-        vendor: ['Vue']
+        // 基础库的大文件单独拆分
+        vendor: ['vue']
     },
     output: {
         // publicPath,
@@ -61,6 +62,8 @@ module.exports = {
             include: APP_PATH,
             loader: 'style-loader!css-loader!less-loader'
         }
+        //  单独拆分 css 文件 但是失败
+        // 后期有空有空再去计较
         // {
         //     test: /\.less/,
         //     include: APP_PATH,
